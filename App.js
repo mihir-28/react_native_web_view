@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React,{ Component } from 'react';
 import { View } from 'react-native';
 import { WebView } from 'react-native-webview';
+import { BackHandler } from 'react-native';
 
 
 export default class WebViewMoviezSpace extends Component {
@@ -31,6 +32,9 @@ export default class WebViewMoviezSpace extends Component {
 
   render(){
     return (
+
+      //npm install --save react-native-webview
+      
       <View style = {{flex:1}}>
         <StatusBar
         animated={true}
@@ -40,8 +44,9 @@ export default class WebViewMoviezSpace extends Component {
       <WebView
         style = {{marginTop: 20}}
         originWhitelist={['*']}
-        source={{ uri: "http://www.pranavtrivedi.in/" }}
-       
+        source={{ uri: "http://www.pranavtrivedi.in/" }} 
+        ref={this.WEBVIEW_REF}
+        onNavigationStateChange={this.onNavigationStateChange.bind(this)}
       />
       </View>
     )
