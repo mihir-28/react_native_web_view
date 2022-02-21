@@ -48,6 +48,7 @@ export default class WebViewMoviezSpace extends Component {
         ref={this.WEBVIEW_REF}
         onNavigationStateChange={this.onNavigationStateChange.bind(this)}
       />
+<Text>mihir</Text>
       </View>
     )
   }
